@@ -1,0 +1,35 @@
+<div class="details-container">
+  <button mat-raised-button color="primary" routerLink="/">Back to List</button>
+
+  @if (loading()) {
+    <p>Loading character details...</p>
+  } @else if (character()) {
+    <mat-card class="details-card">
+      <div class="details-layout">
+        <div class="image-section">
+          <img
+            [src]="character()!.image || 'assets/default-avatar.png'"
+            [alt]="character()!.name"
+            (error)="onImageError($event)"
+          />
+        </div>
+
+        <div class="info-section">
+          <h2>{{ character()!.name }}</h2>
+          <p><strong>Species:</strong> {{ character()!.species }}</p>
+          <p><strong>House:</strong> {{ character()!.house || 'Unknown' }}</p>
+          <p><strong>Wizard:</strong> {{ character()!.wizard ? 'Yes' : 'No' }}</p>
+          <p><strong>Ancestry:</strong> {{ character()!.ancestry || 'Unknown' }}</p>
+          <p><strong>Actor:</strong> {{ character()!.actor || 'Unknown' }}</p>
+
+          <h3>Wand Details</h3>
+            <p><strong>Wood:</strong> {{ character()!.wand.wood || 'Unknown' }}</p>
+            <p><strong>Core:</strong> {{ character()!.wand.core || 'Unknown' }}</p>
+            <p><strong>Length:</strong> {{ character()!.wand.length || 'Unknown' }}</p>
+        </div>
+      </div>
+    </mat-card>
+  } @else {
+    <p>Character not found.</p>
+  }
+</div>

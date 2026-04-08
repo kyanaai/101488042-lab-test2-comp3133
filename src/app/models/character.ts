@@ -1,3 +1,9 @@
+export interface Wand {
+  wood: string;
+  core: string;
+  length: number;
+}
+
 export interface Character {
   id: string;
   name: string;
@@ -16,4 +22,5 @@ export interface Character {
   actor: string;
   alive: boolean;
   image: string;
+  wand: Wand;
 }

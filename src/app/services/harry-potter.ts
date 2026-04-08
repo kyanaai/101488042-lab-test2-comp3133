@@ -17,6 +17,18 @@ export class HarryPotterService {
     return this.http.get<Character[]>(this.charactersUrl);
   }
 
+  getCharactersByHouse(house: string): Observable<Character[]> {
+    return this.http.get<Character[]>(
+      `https://hp-api.onrender.com/api/characters/house/${house}`
+    );
+  }
+
+  getCharacterById(id: string): Observable<Character[]> {
+    return this.http.get<Character[]>(
+      `https://hp-api.onrender.com/api/character/${id}`
+    );
+  }
+
   getSpells(): Observable<Spell[]> {
     return this.http.get<Spell[]>(this.spellsUrl);
   }

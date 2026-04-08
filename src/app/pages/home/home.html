@@ -1,0 +1,32 @@
+
+
+<div class="container">
+  <h1>Harry Potter Explorer</h1>
+  <p class="subtitle">
+    Kiana Nezafat Yazdi - 101488042
+  </p>
+
+  <app-characterfilter
+    (searchChanged)="onSearchChanged($event)"
+    (houseChanged)="onHouseChanged($event)">
+  </app-characterfilter>
+
+  @if (loading()) {
+    <p class="loading">Loading characters...</p>
+  } @else {
+    <app-character-list
+      [characters]="filteredCharacters()"
+      (viewDetails)="onViewDetails($event)">
+    </app-character-list>
+  }
+
+  <div class="spells-search-box">
+    <input
+      type="text"
+      placeholder="Search spells by name"
+      (input)="onSpellSearch($event)"
+    />
+  </div>
+
+  <app-spell-list [spells]="filteredSpells()"></app-spell-list>
+</div>

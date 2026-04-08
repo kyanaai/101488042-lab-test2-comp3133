@@ -1,0 +1,21 @@
+<div class="filter-box">
+  <mat-form-field appearance="outline">
+    <mat-label>Search character</mat-label>
+    <input
+      matInput
+      [formControl]="searchControl"
+      (input)="onSearch()"
+      placeholder="Enter character name"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select house</mat-label>
+    <mat-select (selectionChange)="onHouseChange($event.value)">
+      <mat-option value="">All Houses</mat-option>
+      @for (house of houses; track house) {
+        <mat-option [value]="house">{{ house }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>

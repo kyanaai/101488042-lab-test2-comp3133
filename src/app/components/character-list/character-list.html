@@ -3,32 +3,27 @@
 } @else {
   <div class="grid">
     @for (character of characters; track character.id || character.name) {
-      <div class="card">
+      <mat-card class="card">
         <div class="image-box">
-          @if (character.image) {
-            <img [src]="character.image" [alt]="character.name" />
-          } @else {
-            <div class="no-image">No Image</div>
-          }
+          <img
+            [src]="character.image || 'assets/default-avatar.png'"
+            [alt]="character.name"
+            (error)="onImageError($event)"
+          />
         </div>
 
-        <h3>{{ character.name }}</h3>
-        <p><strong>Actor:</strong> {{ character.actor || 'Unknown' }}</p>
-        <p><strong>House:</strong> {{ character.house || 'Unknown' }}</p>
-        <p><strong>Species:</strong> {{ character.species || 'Unknown' }}</p>
+        <mat-card-content>
+          <h3>{{ character.name }}</h3>
+          <p><strong>House:</strong> {{ character.house || 'Unknown' }}</p>
+          <p><strong>Species:</strong> {{ character.species || 'Unknown' }}</p>
+        </mat-card-content>
 
-        <p>
-          <strong>Status:</strong>
-          @switch (character.alive) {
-            @case (true) {
-              <span>Alive</span>
-            }
-            @default {
-              <span>Deceased</span>
-            }
-          }
-        </p>
-      </div>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="openDetails(character.id)">
+            View Details
+          </button>
+        </mat-card-actions>
+      </mat-card>
     }
   </div>
 }

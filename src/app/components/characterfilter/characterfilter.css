@@ -1,0 +1,10 @@
+.filter-box {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+mat-form-field {
+  width: 280px;
+}
