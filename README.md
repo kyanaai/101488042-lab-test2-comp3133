@@ -68,6 +68,7 @@ npm install
 
 # 4. Run the application
 ng serve
+```
 
 ## Vercel 
 https://101488042-lab-test2-comp3133.vercel.app
