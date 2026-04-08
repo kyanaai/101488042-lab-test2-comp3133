@@ -1,0 +1,34 @@
+@if (characters.length === 0) {
+  <p class="no-results">No characters found.</p>
+} @else {
+  <div class="grid">
+    @for (character of characters; track character.id || character.name) {
+      <div class="card">
+        <div class="image-box">
+          @if (character.image) {
+            <img [src]="character.image" [alt]="character.name" />
+          } @else {
+            <div class="no-image">No Image</div>
+          }
+        </div>
+
+        <h3>{{ character.name }}</h3>
+        <p><strong>Actor:</strong> {{ character.actor || 'Unknown' }}</p>
+        <p><strong>House:</strong> {{ character.house || 'Unknown' }}</p>
+        <p><strong>Species:</strong> {{ character.species || 'Unknown' }}</p>
+
+        <p>
+          <strong>Status:</strong>
+          @switch (character.alive) {
+            @case (true) {
+              <span>Alive</span>
+            }
+            @default {
+              <span>Deceased</span>
+            }
+          }
+        </p>
+      </div>
+    }
+  </div>
+}

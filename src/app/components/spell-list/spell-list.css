@@ -1,0 +1,33 @@
+.spells-section {
+  margin-top: 40px;
+}
+
+.spells-section h2 {
+  margin-bottom: 16px;
+  color: #5b2c83;
+}
+
+.spell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.spell-card {
+  background: #f4f0f8;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 130px;
+}
+
+.spell-card h3 {
+  margin-bottom: 8px;
+  color: #3d1d5c;
+}
+
+.spell-card p {
+  margin: 0;
+  color: #444;
+  line-height: 1.4;
+}

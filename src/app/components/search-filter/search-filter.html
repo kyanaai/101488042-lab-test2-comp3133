@@ -1,0 +1,15 @@
+<div class="filter-box">
+  <input
+    type="text"
+    [formControl]="searchControl"
+    placeholder="Search by character name"
+    (input)="onSearch()"
+  />
+
+  <select (change)="onHouseChange($event)">
+    <option value="">All Houses</option>
+    @for (house of houses; track house) {
+      <option [value]="house">{{ house }}</option>
+    }
+  </select>
+</div>

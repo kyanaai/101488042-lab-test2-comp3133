@@ -1,0 +1,55 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+
+h1 {
+  text-align: center;
+  color: #5b2c83;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+app-search-filter {
+  display: block;
+  margin-bottom: 24px;
+}
+
+
+.spells-search-box {
+  margin: 40px 0 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.spells-search-box input {
+  padding: 10px 14px;
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.spells-search-box input:focus {
+  border-color: #5b2c83;
+  box-shadow: 0 0 0 2px rgba(91, 44, 131, 0.1);
+}

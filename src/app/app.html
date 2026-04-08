@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Harry Potter Explorer</h1>
+  <p class="subtitle">
+    Lab Test 2 By Kiana Nezafat Yazdi (101488042)
+  </p>
+
+  <app-search-filter
+    (searchChanged)="onSearchChanged($event)"
+    (houseChanged)="onHouseChanged($event)"
+  />
+
+  @if (loading()) {
+    <p class="loading">Loading characters...</p>
+  } @else {
+    <app-character-list [characters]="filteredCharacters()" />
+  }
+
+  <div class="spells-search-box">
+    <input
+      type="text"
+      placeholder="Search spells by name"
+      (input)="onSpellSearch($event)"
+    />
+  </div>
+
+  <app-spell-list [spells]="filteredSpells()" />
+</div>

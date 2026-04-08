@@ -1,0 +1,16 @@
+<section class="spells-section">
+  <h2>Popular Harry Potter Spells</h2>
+
+  @if (spells.length === 0) {
+    <p>No spells found.</p>
+  } @else {
+    <div class="spell-grid">
+      @for (spell of spells; track spell.id || spell.name) {
+        <div class="spell-card">
+          <h3>{{ spell.name }}</h3>
+          <p>{{ spell.description || 'No description available.' }}</p>
+        </div>
+      }
+    </div>
+  }
+</section>
